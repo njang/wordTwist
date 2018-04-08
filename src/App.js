@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Reset from './components/Modals/Reset'
+import Instruction from './components/Modals/Instruction'
+import WinMessage from './components/Modals/WinMessage'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <h1>Word Twist</h1>
+    <form autocomplete="off">
+      <input id="guess" type="text" placeholder="Enter text here" autofocus required></input>
+      <div id="buttonRow">
+        <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+        <button type="button" class="btn btn-success" id="twist">Twist</button>
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalReset">Reset</button>
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalInfo">How to Play</button>  
+      </div>      
+    </form>
+    <div id="twisted"></div>
+    <div id="words" class="text-justify d-inline"></div>
+    <Reset />
+    <Instruction />
+    <WinMessage />
+
       </div>
     );
   }
