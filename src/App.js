@@ -9,7 +9,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>Word Twist</h1>
-                <form autoComplete="off">
+                <form autoComplete="off" aria-label="text-entry">
                     <input id="guess" type="text" placeholder="Enter text here" autoFocus required></input>
                     <div id="buttonRow">
                         <button type="submit" className="btn btn-primary" id="submit">Submit</button>
@@ -25,6 +25,8 @@ class App extends Component {
                 <Instruction />
                 <WinMessage />
 
+                <script src="/src/components/Words_reduced.json"></script>
+                <script type="text/javascript" src="/src/components/Logic.js"></script>
             </div>
         );
     }
